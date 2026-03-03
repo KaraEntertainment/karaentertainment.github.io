@@ -1,0 +1,134 @@
+* { box-sizing: border-box; }
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  font-family: system-ui, Arial, sans-serif;
+  background:#0f172a;
+  color:#e2e8f0;
+  animation: fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform: translateY(8px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.card{
+  width: min(720px, 92vw);
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:16px;
+  padding:24px;
+  line-height:1.6;
+}
+
+h1{ margin:0 0 6px; font-size:32px; }
+
+.subtitle{
+  margin: 0 0 6px;
+  font-size:16px;
+  font-weight:600;
+  color:#38bdf8;
+  text-transform:none;
+  letter-spacing:0;
+}
+
+.mini-tag{
+  margin:0 0 18px;
+  font-size:13px;
+  color:#94a3b8;
+  opacity:.9;
+}
+
+h2{ margin:18px 0 8px; font-size:18px; }
+ul{ margin:8px 0 0; padding-left:18px; }
+
+a{ color:#38bdf8; text-decoration:none; }
+a:hover{ text-decoration:underline; }
+
+.projects{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:16px;
+  margin-top:12px;
+}
+
+@media (max-width: 620px){
+  .projects{ grid-template-columns: 1fr; }
+}
+
+.project-card{
+  background:#1f2937;
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:30px;
+
+  width:100%;
+  max-width: 400px;    
+  justify-self: start;  
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.project-card:hover{
+  transform: translateY(-6px);
+  border-color:#475569;
+  box-shadow: 0 20px 45px rgba(0,0,0,.5),
+              0 0 15px rgba(56,189,248,.25);
+}
+
+.project-card h3{ margin:0 0 8px; }
+.project-card p{ margin:0; opacity:.9; line-height:1.45; }
+
+a.project-card{
+  display:flex;
+  color:inherit;
+  text-decoration:none;
+}
+a.project-card:hover{ text-decoration:none; }
+
+.project-card.coming-soon{
+  opacity:.7;
+  cursor: default;
+}
+
+footer{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  color:#94a3b8;
+}
+
+.signature{
+  flex-basis:100%;
+  margin-top:8px;
+  font-size:13px;
+  opacity:.6;
+}
+
+.projects{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(240px, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+@media (max-width: 700px){
+  .projects{ grid-template-columns: 1fr !important; }
+}
+
+.project-card{
+  width: 100% !important;
+  min-height: 140px !important;  
+  height: auto !important;
+  aspect-ratio: auto !important;  
+}
